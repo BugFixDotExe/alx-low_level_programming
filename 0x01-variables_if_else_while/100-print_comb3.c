@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	int digit,dummy;
+	int digit, dummy;
 
 	dummy = 2;
 
