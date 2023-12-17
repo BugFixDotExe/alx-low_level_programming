@@ -7,20 +7,27 @@
 
 int main(void)
 {
-	int digit;
+	int digit,dummy;
 
-	for (digit = 0; digit < 100; digit++)
+	dummy = 2;
+
+
+	for (digit = 1; digit < 100; digit++)
 	{
 		if (digit % 10 == 0)
-			continue;
+		{
+			digit += dummy;
+			dummy += 1;
+		}
 
+		if (dummy == 11)
+			break;
 		putchar('0' + digit / 10);
 		putchar('0' + digit % 10);
-
-		if (digit != 99)
+		if (dummy < 10)
 		{
-			putchar(' ');
 			putchar(',');
+			putchar(' ');
 		}
 	}
 
