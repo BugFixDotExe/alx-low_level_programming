@@ -25,11 +25,21 @@ void more_numbers(void)
 	}
 }
 
+/**
+ * start - a function that splits the start of a double digit
+ * @i: the int value
+ * Return: void
+ */
 void start(int i)
 {
 	_putchar('0' + i / 10);
 }
 
+/**
+ * end - a function that sp;its ar the end of a double digit
+ * @i: the int value
+ * Return: void
+ */
 void end(int i)
 {
 	_putchar('0' + i % 10);
