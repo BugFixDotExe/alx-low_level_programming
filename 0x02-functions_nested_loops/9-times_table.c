@@ -14,29 +14,38 @@ void times_table(void)
 		for (j = 0; j < 10; j++)
 		{
 			mul = i * j;
-			if ((i * j) > 9)
-			{
+			if (mul <= 9)
+				single_digit(mul);
+			else if (mul > 9)
 				double_digit(mul);
-				if (j <= 8)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
-			}
-			else
-			{
-				_putchar('0' + mul);
-				if (j <= 8)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-				}
-			}
 		}
 		_putchar('\n');
 	}
 }
+
+/**
+ * single_digit - fun to print single digit
+ * @input: an integer val
+ * Return: void
+ */
+
+void single_digit(int input)
+{
+	if (input < 5)
+	{
+		_putchar('0' + input);
+		_putchar(',');
+		_putchar(' ');
+		_putchar(' ');
+	}
+	else
+	{
+		_putchar('0' + input);
+		_putchar(',');
+		_putchar(' ');
+	}
+}
+
 
 /**
  * double_digit - a function that gets the start and end
@@ -48,4 +57,6 @@ void double_digit(int input)
 {
 	_putchar('0' + input / 10);
 	_putchar('0' + input % 10);
+	_putchar(',');
+	_putchar(' ');
 }

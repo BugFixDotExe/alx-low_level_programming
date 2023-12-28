@@ -17,5 +17,6 @@ int add(int, int);
 void jack_bauer(void);
 void times_table(void);
 void print_to_98(int n);
+void single_digit(int input);
 void double_digit(int input);
 #endif /*MAIN_H*/
