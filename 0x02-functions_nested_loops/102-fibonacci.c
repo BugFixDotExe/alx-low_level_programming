@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int i, j, first_n, second_n, next_n;
+	long i, j, first_n, second_n, next_n;
 
 	first_n = 0;
 	second_n = 1;
