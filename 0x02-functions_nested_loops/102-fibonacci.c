@@ -7,19 +7,20 @@
 
 int main(void)
 {
-	int i;
-	int sum;
-
-	sum = 1;
+	int i, first_n, second_n, next_n;
+	
+	first_n = 1;
+	second_n = 2;
+	next_n = second_n
 
 	for (i = 0; i <= 50; i++)
 	{
-		sum += i;
-		if (i < 50)
-			printf("%d, ", sum);
-		else
-			printf("%d\n", sum);
+		printf("%d, ", next_n);
+		first_n = second_n;
+		second_n = next_n;
+		next_n = first_n + second_n;
 	}
+	_putchar('\n');
 	return (0);
 }
 
