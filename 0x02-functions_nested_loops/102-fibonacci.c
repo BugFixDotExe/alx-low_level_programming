@@ -13,7 +13,7 @@ int main(void)
 	first_n = 0;
 	second_n = 1;
 	next_n = second_n;
-	for (j = 1; i <= 5; i++)
+	for (j = 1; j <= 5; j++)
 	{
 		for (i = 0; i < 10; i++)
 		{
