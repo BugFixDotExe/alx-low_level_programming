@@ -8,18 +8,20 @@
 
 int main(void)
 {
-	int i, first_n, second_n, next_n;
+	int i, j, first_n, second_n, next_n;
 
 	first_n = 0;
 	second_n = 1;
 	next_n = second_n;
-
-	for (i = 0; i < 50; i++)
+	for (j = 1; i <= 5; i++)
 	{
-		printf("%d, ", next_n);
-		first_n = second_n;
-		second_n = next_n;
-		next_n = first_n + second_n;
+		for (i = 0; i < 10; i++)
+		{
+			printf("%d, ", next_n);
+			first_n = second_n;
+			second_n = next_n;
+			next_n = first_n + second_n;
+		}
 	}
 	_putchar('\n');
 	return (0);
