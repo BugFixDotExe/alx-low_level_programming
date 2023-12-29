@@ -9,9 +9,9 @@ int main(void)
 {
 	int i, first_n, second_n, next_n;
 	
-	first_n = 1;
-	second_n = 2;
-	next_n = second_n
+	first_n = 0;
+	second_n = 1;
+	next_n = second_n;
 
 	for (i = 0; i <= 50; i++)
 	{
