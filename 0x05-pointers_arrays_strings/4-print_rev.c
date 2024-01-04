@@ -16,9 +16,13 @@ void print_rev(char *s)
 
 	if (s == NULL)
 		return;
-
-	for (str_len = 0; *(s +str_len) != '\0'; str_len++)
-		;
+	
+	str_len = 0;
+	while (*s)
+	{
+		str_len += 1;
+		s++;
+	}
 	while (str_len >= 0)
 	{
 		_putchar(*(s +str_len));
