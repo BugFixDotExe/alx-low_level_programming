@@ -19,7 +19,7 @@ void print_rev(char *s)
 
 	for (str_len = 0; *(s +str_len) != '\0'; str_len++)
 		;
-	while (str_len >= 0)
+	while (str_len > 0)
 	{
 		_putchar(*(s +str_len));
 		str_len--;
