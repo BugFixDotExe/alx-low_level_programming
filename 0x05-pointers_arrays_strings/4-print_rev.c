@@ -12,8 +12,8 @@ void print_rev(char *s)
 {
 	int str_len;
 	
-
-	if (s == NULL)
+	
+	if (s == NULL || s == "")
 		return;
 
 	for (str_len = 0; s[str_len] != '\0'; str_len++)
