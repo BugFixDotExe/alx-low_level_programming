@@ -11,11 +11,12 @@
 void print_rev(char *s)
 {
 	int str_len;
-	
+
 	str_len = -1;
 
 	if (s == NULL)
 		return;
+
 
 	if (*s == '\0')
 	{
@@ -29,7 +30,7 @@ void print_rev(char *s)
 		s++;
 	}
 	s--;
-	
+
 	while (str_len >= 0)
 	{
 		_putchar(*s);
