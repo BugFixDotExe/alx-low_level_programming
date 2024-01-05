@@ -24,7 +24,8 @@ void print_rev(char *s)
 		;
 	while (str_len >= 0)
 	{
-		--str_len;
+		if (s[str_len] == '\0')
+			continue;
 		_putchar(s[str_len]);
 	}
 	_putchar('\n');
