@@ -20,15 +20,12 @@ void rev_string(char *s)
 		return;
 	}
 
-	while (*s)
-	{
-		str_len++;
-		s++;
-	}
+	for (str_len = 0; s[str_len] != '\0'; str_len++)
+		;
+
 	while (str_len >= 0)
 	{
-		putchar(*s);
-		--s;
+		putchar(s[str_len]);
 		--str_len;
 	}
 	putchar('\n');
