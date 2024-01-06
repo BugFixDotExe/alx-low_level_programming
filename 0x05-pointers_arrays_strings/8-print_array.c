@@ -9,11 +9,11 @@
  */
 void print_array(int *a, int n)
 {
-	int i;
+	int i, size_of_arr;
 
 	if (n <= 0)
 		return;
-	if (n == 1)
+	if (sizeof(a) == 1)
 	{
 		printf("%d\n", *(a));
 	}
