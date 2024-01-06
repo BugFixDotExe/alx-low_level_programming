@@ -18,7 +18,7 @@ void puts_half(char *str)
 		return;
 	}
 	ptr = &str[0];
-	len_of_str = 0;
+	len_of_str = -1;
 
 	while (*ptr)
 	{
