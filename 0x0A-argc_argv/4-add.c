@@ -7,9 +7,9 @@
  * Return: 0 on success
  */
 
-int main(int argc, char ** argv)
+int main(int argc, char **argv)
 {
-	int i, sum, converted_value;
+	int i, sum, con_val;
 
 	if ((argc - 1) == 0)
 		printf("0\n");
@@ -17,10 +17,10 @@ int main(int argc, char ** argv)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			converted_value = atoi(*(argv + i));
-			if (converted_value != 0 || (converted_value == 0 && strcmp(*(argv + i), "0") == 0))
+			con_val = atoi(*(argv + i));
+			if (con_val != 0 || (con_val == 0 && strcmp(*(argv + i), "0") == 0))
 			{
-				sum += converted_value;
+				sum += con_val;
 			}
 			else
 			{
@@ -32,3 +32,4 @@ int main(int argc, char ** argv)
 	}
 	return (0);
 }
+
