@@ -9,7 +9,7 @@ void *malloc_checked(unsigned int b)
 {
 	char *mem;
 
-	if (b > 0 && b != INT_MAX)
+	if (b > 0 || b != INT_MAX)
 		mem = malloc(b * sizeof(*mem));
 	else
 		exit(98);
