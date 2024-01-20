@@ -9,45 +9,81 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j;
-	char *str;
+	unsigned int s1_len, s2_len;
+	char *joined_str;
 
 	if (s1 == NULL)
+	{
 		s1 = "";
-	else if (s1 == NULL)
+		s1_len = 0;
+	}
+	if (s2 == NULL)
+	{
 		s2 = "";
+		s2_len = 0;
+	}
 
-	for (i = 0; *(s1 + i) != '\0'; i++)
-		;
-	for (j = 0; *(s2 + j) != '\0'; j++)
-		;
-	str = malloc(sizeof(char) * (i + j + 1));
-	if (str == NULL)
+	if (s1 != NULL)
+		for (s1_len = 0; *(s1 + s1_len) != '\0'; s1_len++)
+			;
+	if (s2 != NULL)
+		for (s2_len = 0; *(s2 + s2_len) != '\0'; s2_len++)
+			;
+	joined_str = malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (joined_str == NULL)
 		return (NULL);
+	if (s1_len == 0 && s2_len == 0)
+	{
+		*(joined_str + 0) = '\0';
+	}
 
-	for (i = 0; *(s1 + i) != '\0'; i++)
+	if (s1_len > 0 && s2_len == 0)
 	{
-		*(str + i) = *(s1 + i);
+			for (s1_len = 0; *(s1 + s1_len) != '\0'; s1_len++)
+				*(joined_str + s1_len) = *(s1 + s1_len);
+			*(joined_str + s1_len) = '\0';
 	}
-	if (n >= j)
-	{
-		for (j = 0; j < n; j++)
-		{
-			*(str + i) = *(s2 + j);
-			i++;
-		}
-		*(str + i) = '\0';
-	}
-	else if (n < j)
-	{
-		for (j = 0; j < n; j++)
-		{
-			*(str + i)  = *(s2 + j);
-			i++;
-		}
-		*(str + i) = '\0';
-	}
-	return (str);
 
+	if (s2_len > 0 && s1_len == 0)
+	{
+		if (n >= s2_len)
+		{
+			for (s2_len = 0; *(s2 + s2_len) != '\0'; s2_len++)
+				*(joined_str + s2_len) = *(s2 + s2_len);
+			*(joined_str + s2_len) = '\0';
+		}
+		else
+		{
+			for (s2_len = 0; s2_len < n; s2_len++)
+				*(joined_str + s2_len) = *(s2 + s2_len);
+			*(joined_str + s2_len) = '\0';
+		}
+	}
+
+	if (s1_len > 0 && s2_len > 0)
+	{
+		for (s1_len = 0; *(s1 + s1_len) != '\0'; s1_len++)
+			*(joined_str + s1_len) = *(s1 + s1_len);
+
+		if (n >= s2_len)
+		{
+			for (s2_len = 0; *(s2 + s2_len) != '\0'; s2_len++)
+			{
+				*(joined_str + s1_len) = *(s2 + s2_len);
+				s1_len++;
+			}
+			*(joined_str + s1_len) = '\0';
+		}
+		else
+		{
+			for (s2_len = 0; s2_len < n; s2_len++)
+			{
+				*(joined_str + s1_len) = *(s2 + s2_len);
+				s1_len++;
+			}
+			*(joined_str + s1_len) = '\0';
+		}
+	}
+	return (joined_str);
 }
 

@@ -25,7 +25,6 @@ int main(void)
     printf("%p\n", (void *)d);
     free(c);
     free(i);
-    free(f);
     free(d);
     return (0);
 }
