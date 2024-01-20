@@ -9,14 +9,16 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
+	int i, j;
 
 	i = 0;
-	if (n == 0 && *(src + 0) == '\0' )
-		return ("");
+
+	if (n == 0)
+		return (dest);
 	for (i = 0; *(src + i) != '\0'; i++)
 		;
-
+	if (i == 0)
+		return (dest);
 	if (n > i)
 	{
 
@@ -31,6 +33,15 @@ char *_strncpy(char *dest, char *src, int n)
 		for (i = 0; i < n; i++)
 		{
 			*(dest + i) = *(src + i);
+		}
+	}
+	if (i < n)
+	{
+		for (j = 0; j < n; j++)
+		{
+			if (j < i)
+				*(dest + j) = *(src + j);
+			*(dest + j) = '\0';
 		}
 	}
 	return (dest);
