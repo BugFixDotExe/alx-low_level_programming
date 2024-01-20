@@ -9,8 +9,9 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i,j;
+	int i, j;
 	int min;
+
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
@@ -20,6 +21,7 @@ int _strcmp(char *s1, char *s2)
 		;
 	for (j = 0; *(s2 + j) != '\0'; j++)
 		;
+
 	if (*(s1 + 0) == '\0' && j > 0)
 		return (15);
 	if (i > 0 && *(s2 + 0) == '\0')
