@@ -7,11 +7,14 @@
  * @age: the age of the dog
  * @owner: the owner of the dog
  */
-
 struct dog
 {
 	char *name;
 	float age;
 	char *owner;
 };
+
+#include <stdlib.h>
+void init_dog(struct dog *d, char *name, float age, char *owner);
+
 #endif /*DOG_H*/
