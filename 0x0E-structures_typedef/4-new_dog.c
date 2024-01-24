@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <string.h>
 
 /**
  * new_dog - a function that creates a new dog
@@ -7,7 +8,6 @@
  * @owner: owner of the dog
  * Return: a pointee to the new dog struct
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
@@ -16,8 +16,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	if (name == NULL  || owner == NULL)
 		return (NULL);
-	new_dog->name= name;
+	new_dog->name = malloc(sizeof(char) * strlen(name));
+       	strcpy(new_dog->name, name);
+
+	new_dog->name = malloc(sizeof(char) * strlen(owner));
+	strcpy(new_dog->owner, owner);
+
 	new_dog->age = age;
-	new_dog->owner = owner;
 	return (new_dog);
 }
