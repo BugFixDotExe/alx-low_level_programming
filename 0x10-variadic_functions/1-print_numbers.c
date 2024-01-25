@@ -16,7 +16,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	if (n == 0)
 		return;
 	if (separator == NULL)
-		separator = " ";
+		separator = "";
 	for (i = 0; i < n; i++)
 	{
 		if (i < (n - 1))
