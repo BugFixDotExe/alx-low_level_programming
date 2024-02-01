@@ -3,9 +3,11 @@
 /**
  * add_node_end - a function that adds a new node at the end of a list_t list.
  * @head: a pointer to a pointer of a pointer
- * @str the string to be worked upon
+ * @str: the string to be worked upon
  * Return: a pointer of type list_t
  */
+
+
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *end_node;
@@ -34,7 +36,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	while (*nodes)
 	{
 		nodes = &(*nodes)->next;
-	}		
+	}
 	end_node = malloc(sizeof(list_t));
 	if (end_node == NULL)
 		return (NULL);
