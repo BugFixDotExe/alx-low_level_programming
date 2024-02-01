@@ -11,7 +11,7 @@ size_t list_len(const list_t *h)
 {
 	int i;
 
-	if (h == NULL)
+	if (h->str == NULL)
 		printf("[0] (nil)");
 	for (i = 0; h != NULL; i++)
 	{
