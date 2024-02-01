@@ -18,4 +18,5 @@ void free_list(list_t *head)
 		free(prev);
 		prev = next;
 	}
+	head = NULL;
 }
