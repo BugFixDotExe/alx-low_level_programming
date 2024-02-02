@@ -15,7 +15,7 @@ void free_list(list_t *head)
 	{
 		next = prev->next;
 		if (prev->next == NULL)
-			printf("[0] (nil)\n");
+			printf("[0] (nil)");
 		free(prev->str);
 		free(prev);
 		prev = next;
