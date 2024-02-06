@@ -42,14 +42,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			new_node->next = next_node;
 			return (*head);
 		}
-		/* EXPERIMENTAL WILL CAUSE ERROR IF WRONG !IF LEAVE*/
-		if (inner_head->next == NULL)
-		{
-			new_node->n = n;
-			new_node->next = NULL;
-			inner_head->next = new_node;
-			return (*head);
-		}
 		i++;
 		inner_head = inner_head->next;
 	}
