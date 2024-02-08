@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * binary_to_uint - a function that converts a binary
- * number to an unsigned int.
- * @b: the int that has to converted
- * Return: the binary of b
+ * pow_base - a function that squares SON
+ * @n: the int that has to converted
+ * Return: the squared
  */
 
 int pow_base(int n)
 {
 	int square;
+
 	square = 1;
 	while (n > 0)
 	{
@@ -19,6 +19,14 @@ int pow_base(int n)
 	return (square);
 }
 
+
+
+/**
+  * binary_to_uint - a function that converts a binary
+  * number to an unsigned int.
+  * @b: the int that has to converted
+  * Return: the binary of b
+*/
 unsigned int binary_to_uint(const char *b)
 {
 	int len, sum, i;
@@ -26,7 +34,8 @@ unsigned int binary_to_uint(const char *b)
 	sum = 0;
 	i = 0;
 
-	for (len = 0; *(b + len) != '\0'; len++);
+	for (len = 0; *(b + len) != '\0'; len++)
+		;
 	len = len - 1;
 
 	while (len >= 0)
