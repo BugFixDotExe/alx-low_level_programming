@@ -12,14 +12,16 @@ int create_file(const char *filename, char *text_content)
 	int fd;
 	size_t bytes_written;
 
-	fd = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 700);
+	umask(000);
+	fd = open(filename, O_WRONLY | O_TRUNC | O_CREAT, S_IRWXU);
+	umask(S_IRWXU);
 	if (fd == -1)
 		return (-1);
 	if (filename == NULL)
 		return (-1);
 	if (text_content == NULL)
 	{
-		fd = open(filename, O_WRONLY | O_CREAT, 700);
+		fd = open(filename, O_WRONLY | O_CREAT, S_IRWXU);
 		if (fd == -1)
 			return (-1);
 		return (1);
