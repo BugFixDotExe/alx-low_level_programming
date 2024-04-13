@@ -8,10 +8,11 @@
  * Return: the index of type unsigned long int
  */
 
-unsigned long int key_index(const unsigned char *key, unsigned long int __attribute__((unused))size)
+unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	unsigned long int index;
+	unsigned long int index, mod_index;
 
 	index = hash_djb2(key);
-	return (index);
+	mod_index = index % size;
+	return (mod_index);
 }
