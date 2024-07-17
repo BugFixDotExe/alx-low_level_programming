@@ -8,33 +8,37 @@
  * @value: the value to searched for
  * Return: the index that contains the value
  */
+#include <stdio.h>
+#include <math.h>
+
 int jump_search(int *array, size_t size, int value)
 {
 	size_t lower_bound, higher_bound, index, step_by;
 
-	lower_bound = 0;
-	higher_bound = (size - 1);
-	step_by = sqrt(size);
-
 	if (array == NULL)
 		return (-1);
-	for (index = 0; index < step_by; index++)
+
+	lower_bound = 0;
+	step_by = sqrt(size);
+	higher_bound = step_by;
+
+	while (higher_bound < size && array[higher_bound] < value)
 	{
-		if (value < array[step_by])
-		{
-			printf("Value checked array[%ld] = [%d]\n", index, array[index]);
-			higher_bound = step_by - 1;
-		}
-		else
-		{
-			printf("Value checked array[%ld] = [%d]\n", index, array[index]);
-			lower_bound = step_by + 1;
-		}
+		printf("Value checked array[%ld] = [%d]\n", lower_bound, array[lower_bound]);
+		lower_bound = higher_bound;
+		higher_bound += step_by;
 	}
+	printf("Value found between indexes [%ld] and [%ld]\n",
+			lower_bound, higher_bound);
+	if (higher_bound > size - 1)
+		higher_bound = size - 1;
+
 	for (index = lower_bound; index <= higher_bound; index++)
 	{
+		printf("Value checked array[%ld] = [%d]\n", index, array[index]);
 		if (array[index] == value)
 			return (index);
 	}
 	return (-1);
 }
+
